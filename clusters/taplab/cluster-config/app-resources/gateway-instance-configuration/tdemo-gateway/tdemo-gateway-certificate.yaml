@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tdemo-gateway-cert
+  namespace: default
+spec:
+  dnsNames:
+  - tdemo.existing2.fynesy.net
+  secretName: tdemo-gateway-tls-cert
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
